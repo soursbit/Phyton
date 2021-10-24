@@ -6,9 +6,29 @@
 В зависимости от ответа выводить “YES” / “NO”."""
 
 # Решение:
+ErrorY = False
+ErrorX = False
 print('Программа определяет пренадлежность точки (х;y) на коордиатах, для этого: ')
-y = float(input('Введите координату y: '))
-x = float(input('Введите координату Х: '))
+
+ay = input('Введите координату y: ')
+ax = input('Введите координату Х: ')
+while not ErrorY:
+    try:
+        y = float(ay)
+        ErrorY = True
+        break
+    except ValueError:
+        print('Некорректный ввод Y!')
+        ay = input('Введите координату Y (Введенное значение должно быть числом!): ')
+
+while not ErrorX:
+    try:
+        x = float(ax)
+        ErrorX = True
+        break
+    except ValueError:
+        print('Некорректный ввод X!')
+        ax = input('Введите координату X (Введенное значение должно быть числом!): ')
 
 # Вершины ромба №1
 x1 = -7
